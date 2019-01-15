@@ -21,7 +21,7 @@ const getAnswer = () => {
 const playGame = (times) => {
   let n = times;
   if (!n) {
-    return `Congratulations!, ${name}`;
+    return `Congratulations, ${name}!`;
   }
   const result = getAnswer();
   if (result !== correctMsg) {
