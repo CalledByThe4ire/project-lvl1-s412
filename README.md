@@ -10,3 +10,7 @@ Run `make install`
 
 [![Build Status](https://travis-ci.org/CalledByThe4ire/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/CalledByThe4ire/project-lvl1-s412)
 
+### [brain-even in action!](https://asciinema.org/connect/31def99f-c396-4a85-8936-f7bbc74c4425)
+
+
+
