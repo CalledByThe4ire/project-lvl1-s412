@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-console.log('Welcome to Brain Games!');
+import '../intro';
+import './brain-even';
