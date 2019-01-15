@@ -4,7 +4,8 @@
   "description": "hexlet' educational project",
   "main": "",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
