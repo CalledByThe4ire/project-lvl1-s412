@@ -4,32 +4,10 @@ import { car, cdr } from 'hexlet-pairs';
 // number of times game's process is repeated
 const gameProcessCounter = 3;
 
-// print game's header
-const printGameHeader = () => console.log('Welcome to Brain Games!');
-
 // print game's rules
 const printGameRules = (rules) => {
   console.log(rules);
   console.log();
-};
-
-// print success message for game' completion
-const printGameCompletionSuccessMsg = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
-
-// print failure message for game' completion
-const printGameCompletionFailureMsg = (name) => {
-  console.log(`Let's try again, ${name}`);
-};
-
-// Get player's name
-const askPlayerName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
-  console.log();
-
-  return name;
 };
 
 // Get the player's answer
@@ -42,7 +20,7 @@ const getPlayerAnswer = () => {
 const printGameProcess = (counter, data, userName) => {
   let n = counter;
   if (!n) {
-    return printGameCompletionSuccessMsg(userName);
+    return console.log(`Congratulations, ${userName}!`);
   }
 
   const qa = data();
@@ -54,7 +32,7 @@ const printGameProcess = (counter, data, userName) => {
     console.log(
       `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
     );
-    return printGameCompletionFailureMsg(userName);
+    return console.log(`Let's try again, ${userName}`);
   }
   n -= 1;
   console.log('Correct!');
@@ -62,7 +40,10 @@ const printGameProcess = (counter, data, userName) => {
 };
 
 export default (data, rules) => {
-  printGameHeader();
+  console.log('Welcome to Brain Games!');
   printGameRules(rules);
-  printGameProcess(gameProcessCounter, data, askPlayerName());
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+  console.log();
+  printGameProcess(gameProcessCounter, data, name);
 };
