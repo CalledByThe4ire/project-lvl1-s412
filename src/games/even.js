@@ -1,4 +1,3 @@
-
 import { cons } from 'hexlet-pairs';
 import { getRandomNumber, isEven } from '../helpers';
 import runGame from '../engine';
