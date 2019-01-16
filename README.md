@@ -1,6 +1,6 @@
 # Brain Games
 ## Hexlet' educational project
-### Games: [Brain-Even](https://asciinema.org/a/HDhkQQosFTfdw8Fx5MQbOCtkJ)
+### Games: [Brain-Even](https://asciinema.org/a/HDhkQQosFTfdw8Fx5MQbOCtkJ), [Brain-Calc](https://asciinema.org/a/cdP0z5BpWsqhHtZVorrojBHAI)
 
 Move to folder
 
