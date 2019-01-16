@@ -7,10 +7,10 @@ const rand = 100;
 
 // get data for game's process
 const getData = () => {
-  const leftOperand = getRandomNumber(rand);
-  const rightOperand = getRandomNumber(rand);
-  const question = `${leftOperand} ${rightOperand}`;
-  const answer = gcd(leftOperand, rightOperand).toString();
+  const num1 = getRandomNumber(rand);
+  const num2 = getRandomNumber(rand);
+  const question = `${num1} ${num2}`;
+  const answer = gcd(num1, num2).toString();
   const pair = cons(question, answer);
   return pair;
 };

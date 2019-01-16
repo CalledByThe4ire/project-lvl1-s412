@@ -7,20 +7,20 @@ const rand = 5;
 const ops = ['+', '-', '*'];
 
 // calculate question' expression
-const calculateExpression = (leftOperand, operator, rightOperand) => {
+const calculateExpression = (num1, operator, num2) => {
   let result = 0;
 
   switch (operator) {
     case '+':
-      result = leftOperand + rightOperand;
+      result = num1 + num2;
       break;
 
     case '-':
-      result = leftOperand - rightOperand;
+      result = num1 - num2;
       break;
 
     case '*':
-      result = leftOperand * rightOperand;
+      result = num1 * num2;
       break;
 
     default:
