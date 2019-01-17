@@ -3,13 +3,6 @@ import { car, cdr } from 'hexlet-pairs';
 
 // number of times game's process is repeated
 const gameProcessCounter = 3;
-
-// print game's rules
-const printGameRules = (rules) => {
-  console.log(rules);
-  console.log();
-};
-
 // Get the player's answer
 const getPlayerAnswer = () => {
   const answer = readlineSync.question('Your answer: ');
@@ -39,11 +32,14 @@ const printGameProcess = (counter, data, userName) => {
   return printGameProcess(n, data, userName);
 };
 
-export default (data, rules) => {
-  console.log('Welcome to Brain Games!');
-  printGameRules(rules);
+export default (data, rules = '') => {
+  // по поводу rules: я не понимаю, в чем вы видите проблему.
+  // правила СПЕЦИФИЧНЫ ДЛЯ КАЖДОЙ ОТДЕЛЬНОЙ ИГРЫ, это не общая часть engine,
+  // и мне кажется абсолютно естественным передавать их в модуле соответствующей игры.
+  // Если вы считаете отдельную функцию для этого изботычным шагом,предлагаю вариант ниже:
+  const greeting = `Welcome to Brain Games!${rules === '' ? '\n\n' : `\n${rules}\n`}`;
+  console.log(greeting);
   const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
-  console.log();
+  console.log(`Hello, ${name}\n`);
   printGameProcess(gameProcessCounter, data, name);
 };
