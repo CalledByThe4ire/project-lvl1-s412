@@ -1,10 +1,18 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomNumber, gcd } from '../helpers';
+import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 const randMin = 0;
 const randMax = 100;
+
+const gcd = (x, y) => {
+  if (x !== 0) {
+    return gcd(y % x, x);
+  }
+  return y;
+};
+
 
 // get data for game's process
 const getData = () => {

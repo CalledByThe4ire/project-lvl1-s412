@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { getRandomNumber, isEven } from '../helpers';
+import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".';
@@ -9,7 +9,7 @@ const randMax = 100;
 // get data for game's process
 const getData = () => {
   const question = getRandomNumber(randMin, randMax);
-  const answer = isEven(question) ? 'yes' : 'no';
+  const answer = question % 2 === 0 ? 'yes' : 'no';
   const pair = cons(question, answer);
   return pair;
 };
