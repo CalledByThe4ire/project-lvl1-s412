@@ -6,11 +6,11 @@ const gameDescription = 'What number is missing in the progression?';
 const randMin = -100;
 const randMax = 100;
 
-const buildArithmeticProgression = (
-  start,
-  length = 10,
-  constant = getRandomNumber(-5, 5),
-) => {
+const startNumber = getRandomNumber(randMin, randMax);
+const length = 10;
+const constantStep = getRandomNumber(-5, 5);
+
+const buildArithmeticProgression = (start, len, constStep) => {
   const iter = (s, l, c, acc) => {
     if (l === 0) {
       return acc;
@@ -18,20 +18,23 @@ const buildArithmeticProgression = (
     const newAcc = [...acc, s];
     return iter(s + c, l - 1, c, newAcc);
   };
-  return iter(start, length, constant, []);
+  return iter(start, len, constStep, []);
 };
 
 // get data for game's process
 const getData = () => {
-  const startNumber = getRandomNumber(randMin, randMax);
-  const arithmeticProgression = buildArithmeticProgression(startNumber);
-  const idx = getRandomNumber(0, arithmeticProgression.length - 1);
+  const arithmeticProgression = buildArithmeticProgression(
+    startNumber,
+    length,
+    constantStep,
+  );
+  const index = getRandomNumber(0, arithmeticProgression.length - 1);
   const question = [
-    ...arithmeticProgression.slice(0, idx),
+    ...arithmeticProgression.slice(0, index),
     '..',
-    ...arithmeticProgression.slice(idx + 1),
+    ...arithmeticProgression.slice(index + 1),
   ];
-  const answer = arithmeticProgression[idx].toString();
+  const answer = arithmeticProgression[index].toString();
   const pair = cons(question.join(' '), answer);
   return pair;
 };
