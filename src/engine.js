@@ -34,7 +34,11 @@ export default (data, gameDescription = '') => {
   console.log(greeting);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
-  return printGameProcess(gameProcessCounter, data)
-    ? console.log(`Congratulations, ${name}!`)
-    : console.log(`Let's try again, ${name}`);
+  console.log(
+    `${
+      printGameProcess(gameProcessCounter, data)
+        ? 'Congratulations, '
+        : "Let's try again, "
+    }${name}!`,
+  );
 };
