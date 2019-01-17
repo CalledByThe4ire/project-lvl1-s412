@@ -3,10 +3,14 @@ import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const rules = 'What number is missing in the progression?';
-const randMin = 0;
+const randMin = -100;
 const randMax = 100;
 
-const buildArithmeticProgression = (start, length, constant) => {
+const buildArithmeticProgression = (
+  start,
+  length = 10,
+  constant = getRandomNumber(-5, 5),
+) => {
   const iter = (s, l, c, acc) => {
     if (l === 0) {
       return acc;
@@ -17,18 +21,10 @@ const buildArithmeticProgression = (start, length, constant) => {
   return iter(start, length, constant, []);
 };
 
-const startNumber = getRandomNumber(randMin, randMax);
-const len = 10;
-const constantNumber = 2;
-
-const arithmeticProgression = buildArithmeticProgression(
-  startNumber,
-  len,
-  constantNumber,
-);
-
 // get data for game's process
 const getData = () => {
+  const startNumber = getRandomNumber(randMin, randMax);
+  const arithmeticProgression = buildArithmeticProgression(startNumber);
   const idx = getRandomNumber(0, arithmeticProgression.length - 1);
   const question = [
     ...arithmeticProgression.slice(0, idx),
