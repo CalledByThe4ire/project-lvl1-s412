@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
-const rules = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 const randMin = -100;
 const randMax = 100;
 
@@ -36,4 +36,4 @@ const getData = () => {
   return pair;
 };
 
-export default () => runGame(getData, rules);
+export default () => runGame(getData, gameDescription);

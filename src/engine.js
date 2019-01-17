@@ -27,13 +27,9 @@ const printGameProcess = (counter, data) => {
   return printGameProcess(n - 1, data);
 };
 
-export default (data, rules = '') => {
-  // по поводу rules: я не понимаю, в чем вы видите проблему.
-  // правила СПЕЦИФИЧНЫ ДЛЯ КАЖДОЙ ОТДЕЛЬНОЙ ИГРЫ, это не общая часть engine,
-  // и мне кажется абсолютно естественным передавать их в модуле соответствующей игры.
-  // Если вы считаете отдельную функцию для этого изботычным шагом,предлагаю вариант ниже:
+export default (data, gameDescription = '') => {
   const greeting = `Welcome to Brain Games!${
-    rules === '' ? '\n\n' : `\n${rules}\n`
+    gameDescription === '' ? '\n\n' : `\n${gameDescription}\n`
   }`;
   console.log(greeting);
   const name = readlineSync.question('May I have your name? ');

@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
-const rules = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 const randMin = 0;
 const randMax = 100;
 const ops = ['+', '-', '*', '/'];
@@ -47,4 +47,4 @@ const getData = () => {
   return pair;
 };
 
-export default () => runGame(getData, rules);
+export default () => runGame(getData, gameDescription);

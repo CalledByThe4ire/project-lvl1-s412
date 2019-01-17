@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".';
+const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 const randMin = 0;
 const randMax = 100;
 
@@ -14,4 +14,4 @@ const getData = () => {
   return pair;
 };
 
-export default () => runGame(getData, rules);
+export default () => runGame(getData, gameDescription);
