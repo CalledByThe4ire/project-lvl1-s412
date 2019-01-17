@@ -5,7 +5,7 @@ import runGame from '../engine';
 const rules = 'What is the result of the expression?';
 const randMin = 0;
 const randMax = 100;
-const ops = ['+', '-', '*'];
+const ops = ['+', '-', '*', '/'];
 
 // calculate question' expression
 const calculateExpression = (num1, operator, num2) => {
@@ -22,6 +22,10 @@ const calculateExpression = (num1, operator, num2) => {
 
     case '*':
       result = num1 * num2;
+      break;
+
+    case '/':
+      result = (num1 / num2) === 'Infinity' ? 0 : 0;
       break;
 
     default:
