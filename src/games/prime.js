@@ -6,18 +6,16 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 const randMin = 0;
 const randMax = 100;
 
-const isPrime = (number) => {
-  if (number < 2) {
-    return false;
-  }
-
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
-      return false;
+const isPrime = (num) => {
+  const sqrtNum = Math.floor(Math.sqrt(num));
+  let prime = num !== 1;
+  for (let i = 2; i < sqrtNum + 1; i += 1) {
+    if (num % i === 0) {
+      prime = false;
+      break;
     }
   }
-
-  return true;
+  return prime;
 };
 
 // get data for game's process
