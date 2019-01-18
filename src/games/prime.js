@@ -3,8 +3,8 @@ import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const randMin = 0;
-const randMax = 100;
+const randomMinNumber = 0;
+const randomMaxNumber = 100;
 
 const isPrime = (num) => {
   const sqrtNum = Math.floor(Math.sqrt(num));
@@ -20,7 +20,7 @@ const isPrime = (num) => {
 
 // get data for game's process
 const getData = () => {
-  const question = getRandomNumber(randMin, randMax);
+  const question = getRandomNumber(randomMinNumber, randomMaxNumber);
   const answer = isPrime(question) ? 'yes' : 'no';
   const pair = cons(question, answer);
   return pair;

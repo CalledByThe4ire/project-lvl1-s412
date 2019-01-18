@@ -3,8 +3,8 @@ import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const gameDescription = 'What is the result of the expression?';
-const randMin = 0;
-const randMax = 100;
+const randomMinNumber = 0;
+const randomMaxNumber = 100;
 const mathOperations = ['+', '-', '*', '/'];
 
 // calculate question' expression
@@ -36,9 +36,9 @@ const calculateExpression = (num1, operator, num2) => {
 
 // get data for game's process
 const getData = () => {
-  const mathOperation = mathOperations[getRandomNumber(randMin, mathOperations.length - 1)];
-  const a = getRandomNumber(randMin, randMax);
-  const b = getRandomNumber(randMin, randMax);
+  const mathOperation = mathOperations[getRandomNumber(randomMinNumber, mathOperations.length - 1)];
+  const a = getRandomNumber(randomMinNumber, randomMaxNumber);
+  const b = getRandomNumber(randomMinNumber, randomMaxNumber);
 
   const question = `${a} ${mathOperation} ${b}`;
   const answer = calculateExpression(a, mathOperation, b).toString();

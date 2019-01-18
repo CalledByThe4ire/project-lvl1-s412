@@ -2,8 +2,8 @@ import { cons } from 'hexlet-pairs';
 import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
-const randMin = -100;
-const randMax = 100;
+const randomMinNumber = -100;
+const randomMaxNumber = 100;
 const gameDescription = 'What number is missing in the progression?';
 
 const buildArithmeticProgression = (start, len, constStep) => {
@@ -19,7 +19,7 @@ const buildArithmeticProgression = (start, len, constStep) => {
 
 // get data for game's process
 const getData = () => {
-  const startNumber = getRandomNumber(randMin, randMax);
+  const startNumber = getRandomNumber(randomMinNumber, randomMaxNumber);
   const length = 10;
   const constantStep = getRandomNumber(-5, 5);
   const arithmeticProgression = buildArithmeticProgression(
