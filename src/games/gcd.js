@@ -13,7 +13,6 @@ const gcd = (x, y) => {
   return y;
 };
 
-
 // get data for game's process
 const getData = () => {
   const num1 = getRandomNumber(randMin, randMax);
