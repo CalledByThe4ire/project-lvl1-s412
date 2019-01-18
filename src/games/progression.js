@@ -2,13 +2,9 @@ import { cons } from 'hexlet-pairs';
 import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
-const gameDescription = 'What number is missing in the progression?';
 const randMin = -100;
 const randMax = 100;
-
-const startNumber = getRandomNumber(randMin, randMax);
-const length = 10;
-const constantStep = getRandomNumber(-5, 5);
+const gameDescription = 'What number is missing in the progression?';
 
 const buildArithmeticProgression = (start, len, constStep) => {
   const iter = (s, l, c, acc) => {
@@ -23,18 +19,21 @@ const buildArithmeticProgression = (start, len, constStep) => {
 
 // get data for game's process
 const getData = () => {
+  const startNumber = getRandomNumber(randMin, randMax);
+  const length = 10;
+  const constantStep = getRandomNumber(-5, 5);
   const arithmeticProgression = buildArithmeticProgression(
     startNumber,
     length,
     constantStep,
   );
-  const index = getRandomNumber(0, arithmeticProgression.length - 1);
+  const hiddenElIndex = getRandomNumber(0, arithmeticProgression.length - 1);
   const question = [
-    ...arithmeticProgression.slice(0, index),
+    ...arithmeticProgression.slice(0, hiddenElIndex),
     '..',
-    ...arithmeticProgression.slice(index + 1),
+    ...arithmeticProgression.slice(hiddenElIndex + 1),
   ];
-  const answer = arithmeticProgression[index].toString();
+  const answer = arithmeticProgression[hiddenElIndex].toString();
   const pair = cons(question.join(' '), answer);
   return pair;
 };
