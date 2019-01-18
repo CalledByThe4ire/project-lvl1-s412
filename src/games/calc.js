@@ -5,7 +5,7 @@ import runGame from '../engine';
 const gameDescription = 'What is the result of the expression?';
 const randMin = 0;
 const randMax = 100;
-const ops = ['+', '-', '*', '/'];
+const mathOperations = ['+', '-', '*', '/'];
 
 // calculate question' expression
 const calculateExpression = (num1, operator, num2) => {
@@ -36,12 +36,12 @@ const calculateExpression = (num1, operator, num2) => {
 
 // get data for game's process
 const getData = () => {
-  const op = ops[getRandomNumber(randMin, ops.length - 1)];
+  const mathOperation = mathOperations[getRandomNumber(randMin, mathOperations.length - 1)];
   const a = getRandomNumber(randMin, randMax);
   const b = getRandomNumber(randMin, randMax);
 
-  const question = `${a} ${op} ${b}`;
-  const answer = calculateExpression(a, op, b).toString();
+  const question = `${a} ${mathOperation} ${b}`;
+  const answer = calculateExpression(a, mathOperation, b).toString();
   const pair = cons(question, answer);
 
   return pair;
