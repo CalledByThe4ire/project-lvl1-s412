@@ -7,15 +7,21 @@ const randomMinNumber = 0;
 const randomMaxNumber = 100;
 
 const isPrime = (num) => {
-  const sqrtNum = Math.floor(Math.sqrt(num));
-  let prime = num !== 1;
-  for (let i = 2; i < sqrtNum + 1; i += 1) {
+  if (num === 2) {
+    return true;
+  }
+
+  if (num < 2 || num % 2 === 0) {
+    return false;
+  }
+
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
     if (num % i === 0) {
-      prime = false;
-      break;
+      return false;
     }
   }
-  return prime;
+
+  return true;
 };
 
 // get data for game's process
