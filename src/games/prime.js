@@ -3,7 +3,7 @@ import getRandomNumber from '../helpers';
 import runGame from '../engine';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const randomMinNumber = 0;
+const randomMinNumber = -100;
 const randomMaxNumber = 100;
 
 const isPrime = (num) => {
