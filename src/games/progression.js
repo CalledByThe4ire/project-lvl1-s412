@@ -5,6 +5,7 @@ import runGame from '../engine';
 const randomMinNumber = -100;
 const randomMaxNumber = 100;
 const gameDescription = 'What number is missing in the progression?';
+const length = 10;
 
 const buildArithmeticProgression = (start, len, constStep) => {
   const iter = (s, l, c, acc) => {
@@ -20,20 +21,22 @@ const buildArithmeticProgression = (start, len, constStep) => {
 // get data for game's process
 const getData = () => {
   const startNumber = getRandomNumber(randomMinNumber, randomMaxNumber);
-  const length = 10;
   const constantStep = getRandomNumber(-5, 5);
   const arithmeticProgression = buildArithmeticProgression(
     startNumber,
     length,
     constantStep,
   );
-  const hiddenElIndex = getRandomNumber(0, arithmeticProgression.length - 1);
+  const hiddenElementIndex = getRandomNumber(
+    0,
+    arithmeticProgression.length - 1,
+  );
   const question = [
-    ...arithmeticProgression.slice(0, hiddenElIndex),
+    ...arithmeticProgression.slice(0, hiddenElementIndex),
     '..',
-    ...arithmeticProgression.slice(hiddenElIndex + 1),
+    ...arithmeticProgression.slice(hiddenElementIndex + 1),
   ];
-  const answer = arithmeticProgression[hiddenElIndex].toString();
+  const answer = arithmeticProgression[hiddenElementIndex].toString();
   const pair = cons(question.join(' '), answer);
   return pair;
 };
